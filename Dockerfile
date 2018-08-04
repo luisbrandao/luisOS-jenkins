@@ -1,7 +1,7 @@
 FROM luisos:latest
 MAINTAINER Luis Alexandre Deschamps Brandão
 
-RUN rpm -Uvh https://rpm.nodesource.com/pub_8.x/el/7/x86_64/nodesource-release-el7-1.noarch.rpm && \
+RUN rpm -Uvh rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
     wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo && \
     yum install -y java-1.8.0-openjdk jenkins git initscripts && \
     yum clean all && rm -rf /var/cache/yum
