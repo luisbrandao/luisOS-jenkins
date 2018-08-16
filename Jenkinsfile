@@ -12,10 +12,8 @@ DEPLOY_TARGET = ['master']
 // Steps
 properties([disableConcurrentBuilds(), pipelineTriggers([])])
 node("gw.brandao") {
-    prepareSCM()
-
-    build()
-  }
+  prepareSCM()
+  build()
 }
 
 def prepareSCM() {
