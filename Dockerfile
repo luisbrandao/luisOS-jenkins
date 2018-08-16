@@ -6,6 +6,8 @@ RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
     yum install -y java-1.8.0-openjdk jenkins git initscripts && \
     yum clean all && rm -rf /var/cache/yum
 
+RUN sed -i "s|JENKINS_ARGS=\"\"|JENKINS_ARGS=\"--prefix=/jenkins\"|g" /etc/sysconfig/jenkins
+
 RUN systemctl enable jenkins.service
 
 EXPOSE 8080
