@@ -8,7 +8,15 @@ println "BUILD_NUMBER: " + BUILD_NUMBER
 APP_NAME = 'luisos-jenkins'
 
 // Steps
-properties([disableConcurrentBuilds(), pipelineTriggers([])])
+properties([disableConcurrentBuilds(),   pipelineTriggers([
+    upstream(
+      threshold: 'SUCCESS',
+      upstreamProjects: 'luisos'
+    )
+  ])
+])
+
+])
 node("gw.brandao") {
   prepareSCM()
   build()
