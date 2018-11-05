@@ -16,7 +16,6 @@ properties([disableConcurrentBuilds(),   pipelineTriggers([
   ])
 ])
 
-])
 node("gw.brandao") {
   prepareSCM()
   build()
