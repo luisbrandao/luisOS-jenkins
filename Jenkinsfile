@@ -7,6 +7,7 @@ println "BUILD_NUMBER: " + BUILD_NUMBER
 // Common Defs
 APP_NAME = 'luisos-jenkins'
 
+// Pipeline settings
 properties([disableConcurrentBuilds(),   pipelineTriggers([
     upstream(
       threshold: 'SUCCESS',
