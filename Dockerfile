@@ -11,5 +11,4 @@ RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
 RUN systemctl enable jenkins.service
 
 EXPOSE 8080
-EXPOSE 22
 CMD ["/usr/sbin/init"]
