@@ -1,4 +1,4 @@
-FROM luisos:latest
+FROM registry.techsytes.com/luisos:latest
 MAINTAINER Luis Alexandre Deschamps Brandão
 
 RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
