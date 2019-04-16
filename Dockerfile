@@ -7,6 +7,7 @@ RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
     yum install -y graphviz java-1.8.0-openjdk jenkins git initscripts make docker-ce-cli && \
     yum clean all && rm -rf /var/cache/yum
 
+# Se jenkins to run in location (site.com/jenkins)
 #RUN sed -i "s|JENKINS_ARGS=\"\"|JENKINS_ARGS=\"--prefix=/jenkins\"|g" /etc/sysconfig/jenkins
 
 RUN systemctl enable jenkins.service
