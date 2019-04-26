@@ -4,7 +4,7 @@ MAINTAINER Luis Alexandre Deschamps Brandão
 RUN rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key && \
     yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && \
     yum-config-manager --add-repo https://pkg.jenkins.io/redhat-stable/jenkins.repo && \
-    yum install -y graphviz java-1.8.0-openjdk jenkins git initscripts make docker-ce-cli && \
+    yum install -y sshpass ansible graphviz java-1.8.0-openjdk jenkins git initscripts make docker-ce-cli && \
     yum clean all && rm -rf /var/cache/yum
 
 # Se jenkins to run in location (site.com/jenkins)
